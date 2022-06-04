@@ -2,10 +2,12 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .forms import NewPostForm
+from .models import Image
 
 def home(request):
     current_user = request.user
-    return render(request, 'home.html', {'current_user': current_user})
+    posts = Image.all_posts().order_by('-pub_date')
+    return render(request, 'home.html', {'current_user': current_user, "posts": posts})
 @login_required(login_url='/accounts/login/')
 def new_post(request):
     current_user = request.user

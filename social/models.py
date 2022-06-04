@@ -20,6 +20,10 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()
     
+    @classmethod
+    def all_posts(cls):
+        posts = Image.objects.all()
+        return posts
     def __str__(self):
         return self.image_name
     

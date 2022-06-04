@@ -10,6 +10,29 @@
     <a name="" id="" class="btn btn-primary" href="#" role="button"
       >hello {{current_user}}</a
     >
-    {%endblock%}
+    {%for post in posts%}
+
+    <div class="card" id="post">
+      <img
+        class="card-img-top"
+        data-bs-toggle="modal"
+        src="{{post.image.url}}"
+        alt=""
+      />
+      <div class="card-body">
+        <p>{{post.description}}</p>
+
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#myModal{{image.id}}"
+          data-bs-target="#exampleModal"
+        >
+          VIEW DETAILS
+        </button>
+      </div>
+    </div>
+    {%endfor%} {%endblock%}
   </body>
 </html>
