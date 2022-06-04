@@ -13,7 +13,7 @@ def new_post(request):
         form = NewPostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
-            social_user = current_user
+            post.social_user = current_user
             post.save()
         return redirect('home')
     else: 
