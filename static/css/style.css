@@ -3,7 +3,7 @@ h1 {
 }
 
 .navbar {
-    background-color: rgb(106, 8, 131) !important;
+    background-color: rgb(100, 12, 78) !important;
 }
 
 #navbarSupportedContent {
@@ -34,4 +34,27 @@ h1 {
 
 .account {
     margin-left: 17vw !important;
+}
+
+.post-form {
+    width: 40vw !important;
+    margin: 0 auto;
+    box-shadow: 1px 1px 5px grey;
+    height: 66vh;
+    margin-top: 4vw;
+    border-radius: 10px;
+    padding-left: 5vw;
+    padding-top: 3vw;
+}
+
+.post-form input {
+    width: 90%;
+}
+
+.post-form label {
+    color: rgb(124, 7, 95);
+}
+
+.post-form .btn {
+    background-color: rgb(124, 7, 95) !important;
 }
