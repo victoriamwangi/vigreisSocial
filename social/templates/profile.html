@@ -10,6 +10,9 @@
     <a name="" id="" class="btn btn-primary" href="#" role="button"
       >hello {{current_user}}</a
     >
+    <div>
+      <form>{%csrf_token%}{%bootstrap_form form%}</form>
+    </div>
     {%for post in posts%}
 
     <div class="card" id="post">

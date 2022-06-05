@@ -10,7 +10,7 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <form class="registerfrm" action="/accounts/register/" method="post">
-            <h4 class="loginp">Sign Up</h4>
+            <h3 class="loginp">Sign In</h3>
 
             {% csrf_token %} {% bootstrap_form form %}
             <div class="form-group">
@@ -21,7 +21,6 @@
               />
             </div>
             <input type="hidden" name="next" value="{{next}}" />
-            <p>Don't have an account? <a href="accounts/login">Login</a></p>
           </form>
         </div>
       </div>
