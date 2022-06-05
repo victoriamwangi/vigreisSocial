@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {%load bootstrap5%}
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,13 +6,35 @@
   </head>
   <body>
     {%block content%}
-    <h1>lets see</h1>
-    <a name="" id="" class="btn btn-primary" href="#" role="button"
-      >hello {{current_user}}</a
-    >
-    <div>
-      <form>{%csrf_token%}{%bootstrap_form form%}</form>
+
+    <div class="card-deck profdecks">
+      <div class="card">
+        <img class="card-img-top" src="holder.js/100x180/" alt="" />
+        <div class="card-body">
+          <h4 class="card-title">Title</h4>
+          <p class="card-text">Text</p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="holder.js/100x180/" alt="" />
+        <div class="card-body">
+          <form class="updatefrm" action="" method="post">
+            <h3 class="loginp">Update Profile</h3>
+
+            {% csrf_token %} {% bootstrap_form form %}
+            <div class="form-group">
+              <input
+                type="submit"
+                class="btn btn-primary btn-sm"
+                value="Sign Up"
+              />
+            </div>
+            <input type="hidden" name="next" value="{{next}}" />
+          </form>
+        </div>
+      </div>
     </div>
+
     {%for post in posts%}
 
     <div class="card" id="post">

@@ -9,5 +9,6 @@ class NewPostForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
     class Meta: 
         model = Profile
+        fields = ['email', 'bio', 'profile_image', 'location']
         
         

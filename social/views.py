@@ -25,14 +25,17 @@ def new_post(request):
         return render(request, 'new_post.html', {'form': form})
 def profile(request):
     current_user = request.user
-    posts = Image.all_posts().order_by('-pub_date')
-    
+    posts = Image.all_posts().order_by('-pub_date')   
     if request.method == 'POST':
         form= ProfileForm(request.POST, request.FILES)
-        if form.isv_valid():
+        if form.is_valid():
             post = form.save(commit= False)
             post.save()
-    return render(request, 'profile.html', {'current_user': current_user, "posts": posts, 'form': form})
+        return redirect('home')
+        
+    else:
+        form = ProfileForm()
+        return render(request, 'profile.html', {'current_user': current_user, "posts": posts, "form": form})
             
 
 

@@ -51,18 +51,21 @@ h1 {
 
 .post-form input,
 .loginfrm input,
+.updatefrm input,
 .registerfrm input {
     width: 90%;
 }
 
 .post-form label,
 .loginfrm label,
+.updatefrm label,
 .registerfrm label {
     color: rgb(124, 7, 95);
 }
 
 .post-form .btn,
 .registerfrm .btn,
+.updatefrm .btn,
 .loginfrm .btn {
     background-color: rgb(124, 7, 95) !important;
 }
@@ -73,7 +76,8 @@ h1 {
 }
 
 .loginfrm .btn-sm,
-.registerfrm .btn-sm {
+.registerfrm .btn-sm,
+.updatefrm .btn-sm {
     background-color: rgb(124, 7, 95) !important;
     font-size: 1.4vw;
 }
@@ -84,4 +88,8 @@ h1 {
 
 .text-muted {
     display: none;
+}
+
+.profdecks {
+    display: flex !important;
 }
