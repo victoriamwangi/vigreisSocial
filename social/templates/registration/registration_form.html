@@ -8,11 +8,10 @@
       <p>Some Information Might be Incorrect</p>
       {% endif %}
       <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="text-center">Sign Up</h3>
-        </div>
         <div class="panel-body">
-          <form action="/accounts/register/" method="post">
+          <form class="registerfrm" action="/accounts/register/" method="post">
+            <h4 class="loginp">Sign Up</h4>
+
             {% csrf_token %} {% bootstrap_form form %}
             <div class="form-group">
               <input
@@ -21,8 +20,8 @@
                 value="Sign Up"
               />
             </div>
-
             <input type="hidden" name="next" value="{{next}}" />
+            <p>Don't have an account? <a href="accounts/login">Login</a></p>
           </form>
         </div>
       </div>

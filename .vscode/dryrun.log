@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/moringa/Documents/Dev/Django/IPS/vigreisSocial'
+python3 manage.py makemigrations social
+make: Leaving directory '/home/moringa/Documents/Dev/Django/IPS/vigreisSocial'
+ 

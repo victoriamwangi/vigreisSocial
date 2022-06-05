@@ -36,7 +36,9 @@ h1 {
     margin-left: 17vw !important;
 }
 
-.post-form {
+.post-form,
+.loginfrm,
+.registerfrm {
     width: 40vw !important;
     margin: 0 auto;
     box-shadow: 1px 1px 5px grey;
@@ -47,14 +49,38 @@ h1 {
     padding-top: 3vw;
 }
 
-.post-form input {
+.post-form,
+.loginfrm,
+.registerfrm input {
     width: 90%;
 }
 
-.post-form label {
+.post-form,
+.loginfrm,
+.registerfrm label {
     color: rgb(124, 7, 95);
 }
 
-.post-form .btn {
+.post-form .loginfrm,
+.registerfrm .btn {
     background-color: rgb(124, 7, 95) !important;
+}
+
+.loginp {
+    color: rgb(124, 7, 95);
+    /* margin-top: 2vw; */
+}
+
+.loginfrm,
+.registerfrm .btn-sm {
+    background-color: rgb(124, 7, 95) !important;
+    font-size: 1.4vw;
+}
+
+.registerfrm {
+    height: 90vh;
+}
+
+.text-muted {
+    display: none;
 }
