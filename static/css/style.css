@@ -49,20 +49,21 @@ h1 {
     padding-top: 3vw;
 }
 
-.post-form,
-.loginfrm,
+.post-form input,
+.loginfrm input,
 .registerfrm input {
     width: 90%;
 }
 
-.post-form,
-.loginfrm,
+.post-form label,
+.loginfrm label,
 .registerfrm label {
     color: rgb(124, 7, 95);
 }
 
-.post-form .loginfrm,
-.registerfrm .btn {
+.post-form .btn,
+.registerfrm .btn,
+.loginfrm .btn {
     background-color: rgb(124, 7, 95) !important;
 }
 
@@ -71,7 +72,7 @@ h1 {
     /* margin-top: 2vw; */
 }
 
-.loginfrm,
+.loginfrm .btn-sm,
 .registerfrm .btn-sm {
     background-color: rgb(124, 7, 95) !important;
     font-size: 1.4vw;
