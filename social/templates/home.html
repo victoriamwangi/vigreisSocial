@@ -6,33 +6,42 @@
   </head>
   <body>
     {%block content%}
-    <h1>lets see</h1>
-    <a name="" id="" class="btn btn-primary" href="#" role="button"
-      >hello {{current_user}}</a
-    >
-    {%for post in posts%}
 
-    <div class="card" id="post">
-      <img
-        class="card-img-top"
-        data-bs-toggle="modal"
-        src="{{post.image.url}}"
-        alt=""
-      />
-      <div class="card-body">
-        <p>{{post.description}}</p>
+    <div class="row">
+      <div class="col-lg-2"></div>
 
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#myModal{{image.id}}"
-          data-bs-target="#exampleModal"
+      <div class="col-lg-8">
+        <h1>lets see</h1>
+
+        <a name="" id="" class="btn btn-primary" href="#" role="button"
+          >hello {{current_user}}</a
         >
-          VIEW DETAILS
-        </button>
+        {%for post in posts%}
+
+        <div class="card" id="post">
+          <img
+            class="card-img-top"
+            data-bs-toggle="modal"
+            src="{{post.image.url}}"
+            alt=""
+          />
+          <div class="card-body">
+            <p>{{post.description}}</p>
+
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#myModal{{image.id}}"
+              data-bs-target="#exampleModal"
+            >
+              VIEW DETAILS
+            </button>
+          </div>
+        </div>
+        {%endfor%} {%endblock%}
       </div>
+      <div class="col-lg-2"></div>
     </div>
-    {%endfor%} {%endblock%}
   </body>
 </html>
