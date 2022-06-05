@@ -1,3 +1,37 @@
 h1 {
     color: green !important;
 }
+
+.navbar {
+    background-color: rgb(188, 17, 231) !important;
+}
+
+#navbarSupportedContent {
+    margin-left: 25vw;
+}
+
+.nav-item {
+    padding-right: 3vw;
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 1.3vw;
+    font-weight: bold !important;
+}
+
+.nav-link svg {
+    color: white !important;
+    font-size: 2.3vw;
+    font-weight: bold !important;
+}
+
+.searchfrm {
+    width: 14vw !important;
+    height: 2.7vw;
+    margin-top: 0.5vw;
+}
+
+.account {
+    margin-left: 17vw !important;
+}
