@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .forms import NewPostForm
+from .forms import NewPostForm, ProfileForm
 from .models import Image
 
 def home(request):
@@ -26,7 +26,13 @@ def new_post(request):
 def profile(request):
     current_user = request.user
     posts = Image.all_posts().order_by('-pub_date')
-    return render(request, 'profile.html', {'current_user': current_user, "posts": posts})
+    
+    if request.method == 'POST':
+        form= ProfileForm(request.POST, request.FILES)
+        if form.isv_valid():
+            post = form.save(commit= False)
+            post.save()
+    return render(request, 'profile.html', {'current_user': current_user, "posts": posts, 'form': form})
             
 
 
