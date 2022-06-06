@@ -11,53 +11,31 @@
       <div class="card">
         <img class="card-img-top" src="holder.js/100x180/" alt="" />
         <div class="card-body">
-          <h4 class="card-title">Title</h4>
-          <p class="card-text">Text</p>
+          <h4 class="card-title">BIO:{{user.username}}</h4>
+          <h4 class="card-title">BIO:{{user.email}}</h4>
+          <img
+            class="card-img-top"
+            src="{{request.current_user.profile_image.url}}"
+            alt="hihi"
+          />
         </div>
       </div>
       <div class="card">
         <img class="card-img-top" src="holder.js/100x180/" alt="" />
         <div class="card-body">
-          <form class="updatefrm" action="" method="post">
-            <h3 class="loginp">Update Profile</h3>
-
-            {% csrf_token %} {% bootstrap_form form %}
-            <div class="form-group">
-              <input
-                type="submit"
-                class="btn btn-primary btn-sm"
-                value="Sign Up"
-              />
-            </div>
-            <input type="hidden" name="next" value="{{next}}" />
+          <form
+            class="updatefrm"
+            action="{%url 'profile'%}"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            {%csrf_token%} {% bootstrap_form form%}
+            <input type="submit" class="btn btn-success btn-lg" value="Post" />
           </form>
         </div>
       </div>
     </div>
 
-    {%for post in posts%}
-
-    <div class="card" id="post">
-      <img
-        class="card-img-top"
-        data-bs-toggle="modal"
-        src="{{post.image.url}}"
-        alt=""
-      />
-      <div class="card-body">
-        <p>{{post.description}}</p>
-
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#myModal{{image.id}}"
-          data-bs-target="#exampleModal"
-        >
-          VIEW DETAILS
-        </button>
-      </div>
-    </div>
-    {%endfor%} {%endblock%}
+    {%endblock%}
   </body>
 </html>
