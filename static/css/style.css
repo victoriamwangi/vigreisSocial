@@ -11,7 +11,8 @@ body {
 }
 
 .navbar-brand {
-    text-decoration: italic !important;
+    font-style: italic !important;
+    font-family: Inter, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, Sans-Serif;
 }
 
 #navbarSupportedContent {
@@ -34,7 +35,7 @@ body {
 
 .nav-link svg {
     color: black !important;
-    font-size: 1.7vw;
+    font-size: 1.5vw;
     font-weight: bold !important;
 }
 
@@ -52,7 +53,7 @@ body {
 #post {
     border-radius: 10px;
     margin-top: 2vw;
-    height: 130vh;
+    height: 120vh;
 }
 
 #post .head {
@@ -62,6 +63,19 @@ body {
 #post img {
     height: 90vh;
     object-fit: cover;
+}
+
+#post svg {
+    font-size: 1.8vw;
+    margin-left: 1.1vw;
+}
+
+#post .save {
+    margin-left: 26vw !important;
+}
+
+#post .captionImg {
+    margin-left: 1.4vw;
 }
 
 .post-form,
