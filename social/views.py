@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .forms import NewPostForm, ProfileForm, UserForm
-from .models import Image
+from .models import Image, Profile
 from django.contrib.auth.models import User
 
 
@@ -25,10 +25,25 @@ def new_post(request):
     else: 
         form = NewPostForm()
         return render(request, 'new_post.html', {'form': form})
+
+@login_required
 def profile(request):
-    form = ProfileForm()
-    # return render(request, 'profile.html', {'form': form})
+    user = User.objects.get(username= request.user)
+    profile = Profile.objects.all()
+    # posts = Image.objects.filter(profile__id=id)[::-1]
+    return render(request, "profile.html", context={"user":user,"profile":profile,})
+
+# def profile(request):
+#     current_user = request.user
+#     poster = Profile.objects.filter(username=request.user)
+#     # poster = Profile.objects.filter(username= current_user)
+    
+#     return render(request, 'profile.html', {'current_user': current_user, "poster": poster})
+            
+def update_profile(request):
     current_user = request.user
+    poster = Profile.objects.filter(username=request.user)
+    # poster = Profile.objects.filter(username= current_user)
     posts = Image.all_posts().order_by('-pub_date')   
     if request.method == 'POST':
         form= ProfileForm(request.POST, request.FILES)
@@ -40,9 +55,14 @@ def profile(request):
         
     else:
         form = ProfileForm()
-        return render(request, 'profile.html', {'current_user': current_user, "posts": posts, "form": form})
+        return render(request, 'update_profile.html', {'current_user': current_user, "posts": posts, "form": form, "poster": poster})
             
-
+    
+    
+    
+    
+    
+    
 # def profile(username):
 #    user = User.query.filter_by(username=username).first() 
 #    images = Images.query.filter_by(author = current_user.id).all()

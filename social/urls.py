@@ -7,6 +7,7 @@ urlpatterns=[
     re_path('^$', views.home, name= "home"),
     re_path('^new/post$', views.new_post, name= "new_post"),
     re_path('^profile$', views.profile, name = "profile"),
+    re_path('^update_profile$', views.update_profile, name= "update_profile")
 
 ]
 if settings.DEBUG:

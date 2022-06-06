@@ -12,6 +12,7 @@ body {
 
 .navbar-brand {
     font-style: italic !important;
+    padding-left: 14vw;
     font-family: Inter, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, Sans-Serif;
 }
 
@@ -21,10 +22,6 @@ body {
 
 .nav-item {
     padding-right: 3vw;
-}
-
-.home {
-    margin-left: 4vw !important;
 }
 
 .nav-link {
@@ -48,6 +45,7 @@ body {
 
 .searchfrm input {
     background-color: #efefef !important;
+    border-radius: 5px !important;
 }
 
 #post {

@@ -6,32 +6,31 @@
   </head>
   <body>
     {%block content%}
+    <div class="row">
+      <div class="col-lg-2"></div>
 
-    <div class="card-deck profdecks">
-      <div class="card">
-        <img class="card-img-top" src="holder.js/100x180/" alt="" />
-        <div class="card-body">
-          <h4 class="card-title">BIO:{{user.username}}</h4>
-          <h4 class="card-title">BIO:{{user.email}}</h4>
-          <img
-            class="card-img-top"
-            src="{{request.current_user.profile_image.url}}"
-            alt="hihi"
-          />
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="holder.js/100x180/" alt="" />
-        <div class="card-body">
-          <form
-            class="updatefrm"
-            action="{%url 'profile'%}"
-            method="post"
-            enctype="multipart/form-data"
-          >
-            {%csrf_token%} {% bootstrap_form form%}
-            <input type="submit" class="btn btn-success btn-lg" value="Post" />
-          </form>
+      <div class="col-lg-10">
+        <div class="card">
+          <img class="card-img-top" src="holder.js/100x180/" alt="" />
+          <div class="card-body">
+            <img
+              class="card-img-top"
+              src="{{request.poster.profile_image.url}}"
+              alt=""
+            />
+            <div class="details">
+              <a class="nav-link active" aria-current="page" href="{%url "update_profile"%}">Edit Profile<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path fill="currentColor" d="m6.4 14.1l1.3 1.3l6.9-6.9l-1.3-1.3l-6.9 6.9zm6.3-7.5l-1.3-1.3l-6.9 6.9l1.4 1.4l6.8-7zm2.1-4.7l3.3 3.3c.6.6.5 1.5 0 2l-9.9 9.9l-6.9 1.4l1.4-6.9c6.2-6.3 9.5-9.6 9.9-9.9c.6-.4 1.6-.4 2.2.2z"/></svg></a>
+              <h4 class="card-title">{{user.email}}</h4>
+              <h4 class="card-title">{{user.bio}}</h4>
+              <h4 class="card-title">{{user.first_name}}</h4>
+
+
+
+
+
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
