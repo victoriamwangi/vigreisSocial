@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jun  7 09:48:54 2022
+# Make data base, printed on Tue Jun  7 17:21:09 2022
 
 # Variables
 
@@ -123,7 +123,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 7313
+GIO_LAUNCHED_DESKTOP_FILE_PID = 44233
 # automatic
 %F = $(notdir $%)
 # environment
@@ -191,7 +191,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-3e5fb66c-8187-4353-a5ff-194ea8015fa9.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-9ba5c812-9ab9-46fc-b37a-8da613d488d2.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -271,7 +271,7 @@ LC_ADDRESS = om_KE.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 7359
+VSCODE_PID = 44279
 # environment
 DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=f4c65be394745ae0f6046cf1629eee8a
 # environment
@@ -344,6 +344,6 @@ migrations:
 # strcache performance: lookups = 28 / hit rate = 21%
 # hash-table stats:
 # Load=22/8192=0%, Rehash=0, Collisions=1/28=4%
-# Finished Make data base on Tue Jun  7 09:48:54 2022
+# Finished Make data base on Tue Jun  7 17:21:09 2022
 
  

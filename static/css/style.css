@@ -55,6 +55,7 @@ body {
     border-radius: 10px;
     margin-top: 1vw;
     height: 120vh;
+    width: 100% !important;
 }
 
 #post .head {
@@ -62,7 +63,8 @@ body {
 }
 
 #post img {
-    height: 90vh;
+    width: 100% !important;
+    height: 80vh;
     object-fit: cover;
 }
 

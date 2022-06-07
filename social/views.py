@@ -1,8 +1,9 @@
+from hashlib import new
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .forms import NewPostForm, ProfileForm, UserForm
-from .models import Image, Profile, Like
+from .forms import NewPostForm, ProfileForm, UserForm, CommentForm
+from .models import Image, Profile, Like, Comment
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
@@ -44,7 +45,7 @@ def profile(request):
             
 def update_profile(request):
     current_user = request.user
-    poster = Profile.objects.filter(username=request.user)
+    poster = Profile.objects.filter(user=request.user)
     posts = Image.all_posts().order_by('-pub_date')   
     if request.method == 'POST':
         form= ProfileForm(request.POST, request.FILES)
@@ -69,7 +70,34 @@ def like(request,operation,pk):
         post.likes -= 1
         post.save()
     return redirect('home')
-    
+
+
+def ShowUserPage(request, username):
+    if 'profile' in request.GET and request.GET["profile"]:
+        search_term = request.GET.get("profile")
+        searched_profile = Profile.objects.get(user__username=search_term )
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"profiles": searched_profile})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
+        
+def post_comment(request):
+    postcomm = get_object_or_404(Image, )
+    comments = postcomm.comments.filter(active=True)
+    new_comment = None
+    if request.method == 'POST':
+        form = CommentForm(data =request.POST)
+        if form.is_valid():
+            new_comment = form.save(commit = False)
+            new_comment.postcomm = postcomm
+            new_comment.save()
+    else:
+        form = CommentForm()                   
+    return render(request, 'home.html', {"postcomm": postcomm, "comments": comments, "new_comment": new_comment, "comment_form": form})      
+            
     
     
     
