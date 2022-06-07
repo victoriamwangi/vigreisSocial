@@ -108,7 +108,19 @@
               <p class="card-title">{{user.first_name}} {{user.second_name}}</p>
             </div>
           </div>
-          <div class="followers"></div>
+        </div>
+        <div class="followers">
+          <ul>
+            <p>Suggestions for you</p>
+            {%for userone in users%}
+            <li class="followuser">
+              <img src="{{userone.profile.profile_image.url}}" />
+              <a class="username" href="{{userone.profile.profile_}}""">{{userone.username}}</a>
+              <a href="">Follow</a>
+            </li>
+
+            {%endfor%}
+          </ul>
         </div>
       </div>
     </div>

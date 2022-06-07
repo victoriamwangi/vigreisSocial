@@ -190,10 +190,46 @@ body {
     width: 5vw;
     height: 5vw;
     border-radius: 50%;
+    margin-left: 2vw;
 }
 
 #homeprof {
     display: flex;
     flex-direction: row;
     align-items: center;
+    border: none;
+}
+
+.followers li {
+    list-style: none;
+}
+
+.followers .btn {
+    width: 6vw;
+}
+
+.followuser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.2vw;
+}
+
+.followuser img {
+    width: 2vw !important;
+    height: 2vw !important;
+    border-radius: 50% !important;
+}
+
+.followuser a {
+    text-decoration: none !important;
+}
+
+.followuser .username {
+    color: black;
+}
+
+.followers ul p {
+    color: #9b9b9b;
 }

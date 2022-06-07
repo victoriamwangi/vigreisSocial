@@ -12,8 +12,9 @@ def home(request):
     profile = Profile.objects.all()
     posts = Image.all_posts().order_by('-pub_date')
     likes = Like.objects.all()
+    users = User.objects.all()
     # delete_post = Image.delete_image(current_user)
-    return render(request, 'home.html', {'current_user': user, "posts": posts, "profile": profile })
+    return render(request, 'home.html', {'current_user': user, "posts": posts, "profile": profile , "users":users})
 
 def new_post(request):
     current_user = request.user
