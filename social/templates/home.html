@@ -113,12 +113,13 @@
           <ul>
             <p>Suggestions for you</p>
             {%for userone in users%}
+            {% if userone != current_user%}
             <li class="followuser">
               <img src="{{userone.profile.profile_image.url}}" />
               <a class="username" href="{{userone.profile.profile_}}""">{{userone.username}}</a>
               <a href="">Follow</a>
             </li>
-
+          {%endif%}
             {%endfor%}
           </ul>
         </div>
