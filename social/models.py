@@ -28,7 +28,7 @@ class Image(models.Model):
         return self.image_name
     
 class Profile(models.Model):
-    username = models.ForeignKey(User, on_delete= models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     email = models.CharField(max_length= 30)
     bio = models.CharField(max_length= 50)
     profile_image = models.ImageField(upload_to = 'images/', null=True, blank= True)

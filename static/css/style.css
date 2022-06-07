@@ -4,6 +4,9 @@ h1 {
 
 body {
     background-color: #fafafa;
+    box-shadow: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .navbar {
@@ -132,4 +135,48 @@ body {
 
 .profdecks {
     display: flex !important;
+}
+
+.profpic .card-img-top {
+    width: 12vw;
+    height: 12vw;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profpic {
+    display: flex !important;
+    flex-direction: row;
+}
+
+.profpic img {
+    margin-right: 9vw;
+}
+
+.profpost {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3vw;
+}
+
+#profpost {
+    width: 28vw !important;
+    margin-right: 3vw;
+}
+
+.profpost img {
+    width: 100% !important;
+}
+
+#profpost svg {
+    font-size: 1.8vw;
+    margin-left: 1.1vw;
+}
+
+#profpost .save {
+    margin-left: 26vw !important;
+}
+
+#profpost .captionImg {
+    margin-left: 1.4vw;
 }
