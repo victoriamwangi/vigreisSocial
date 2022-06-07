@@ -14,6 +14,7 @@ class Image(models.Model):
     image_caption = models.CharField(max_length=50)
     image = models.ImageField(upload_to = 'images/', null=True, blank=True)
     pub_date = models.DateTimeField(auto_now_add=True)
+    likes = models.PositiveIntegerField(default=0)
     
     def save_image(self):
         self.save()
@@ -24,6 +25,9 @@ class Image(models.Model):
     def all_posts(cls):
         posts = Image.objects.all()
         return posts
+    @property
+    def view_count(self):
+        return Like.objects.filter(post=self).count()
     def __str__(self):
         return self.image_name
     
@@ -48,4 +52,4 @@ class Like(models.Model):
     
     
     def __str__(self):
-        return self.pub_date
+       return self.image.image_name + " liked by " + self.user.username

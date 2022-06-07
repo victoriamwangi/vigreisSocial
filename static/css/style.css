@@ -233,3 +233,7 @@ body {
 .followers ul p {
     color: #9b9b9b;
 }
+
+#liked {
+    display: none;
+}
