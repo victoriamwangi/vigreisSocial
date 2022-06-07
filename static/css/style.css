@@ -180,3 +180,20 @@ body {
 #profpost .captionImg {
     margin-left: 1.4vw;
 }
+
+#homeprof {
+    height: 10vw;
+    background-color: #fafafa;
+}
+
+#homeprof img {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+}
+
+#homeprof {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

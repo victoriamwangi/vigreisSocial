@@ -7,11 +7,13 @@ from django.contrib.auth.models import User
 
 
 def home(request):
-    current_user = request.user
+    
+    user = User.objects.get(username= request.user)
+    profile = Profile.objects.all()
     posts = Image.all_posts().order_by('-pub_date')
     likes = Like.objects.all()
     # delete_post = Image.delete_image(current_user)
-    return render(request, 'home.html', {'current_user': current_user, "posts": posts, })
+    return render(request, 'home.html', {'current_user': user, "posts": posts, "profile": profile })
 
 def new_post(request):
     current_user = request.user
