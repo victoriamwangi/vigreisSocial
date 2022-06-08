@@ -12,9 +12,8 @@
 
       <div class="col-lg-5">
         {%for post in posts%}
-        {% if userone != current_user%}
-        <img src="{{userone.profile.profile_image.url}}" />
-              <a class="username" href="{{userone.profile.profile_}}""">{{userone.username}}</a>
+        
+        
         <div class="card" id="post">
          
           <div class="card-body">
@@ -146,6 +145,8 @@
             {%endfor%}
           </ul>
         </div>
+        
+
       </div>
     </div>
     {%endblock%}
