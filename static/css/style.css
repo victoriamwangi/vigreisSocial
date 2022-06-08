@@ -163,6 +163,7 @@ body {
     display: flex;
     flex-direction: row;
     margin-top: 3vw;
+    flex-wrap: wrap;
 }
 
 #profpost {
@@ -242,4 +243,10 @@ body {
 
 #liked {
     display: none;
+}
+
+@media (min-width: 375px) and (max-width: 912px) {
+    .none {
+        display: none !important;
+    }
 }
