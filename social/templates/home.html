@@ -12,46 +12,62 @@
 
       <div class="col-lg-5">
         {%for post in posts%}
-        
-        
+
         <div class="card" id="post">
-         
           <div class="card-body">
-          <div class="head">
-
-            <img class="rounded-circle article-image" src="{{post.user.profile.profile_image.url}}" alt="" width="45" height="4"/>
-              <p>{{post.user}}</p>
-          </div>
-
-           <img
-            class="card-img-top"
-            data-bs-toggle="modal"
-            src="{{post.image.url}}"
-            alt=""
-          />
-            <a id='like' href="{% url 'like' operation='like' pk=post.id%}">
-              <svg
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              role="img"
-              width="1em"
-              height="1em"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 48 48"
-            >
-              <path
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="4"
-                d="M15 8C8.925 8 4 12.925 4 19c0 11 13 21 20 23.326C31 40 44 30 44 19c0-6.075-4.925-11-11-11c-3.72 0-7.01 1.847-9 4.674A10.987 10.987 0 0 0 15 8Z"
+            <div class="head">
+              <img
+                class="rounded-circle article-image"
+                src="{{post.user.profile.profile_image.url}}"
+                alt=""
+                width="45"
+                height="4"
               />
-            </svg>
-    
+              <p>{{post.user.user.username}}</p>
+            </div>
+
+            <img
+              class="card-img-top"
+              data-bs-toggle="modal"
+              src="{{post.image.url}}"
+              alt=""
+            />
+            <a id="like" href="{% url 'like' operation='like' pk=post.id%}">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="img"
+                width="1em"
+                height="1em"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="4"
+                  d="M15 8C8.925 8 4 12.925 4 19c0 11 13 21 20 23.326C31 40 44 30 44 19c0-6.075-4.925-11-11-11c-3.72 0-7.01 1.847-9 4.674A10.987 10.987 0 0 0 15 8Z"
+                />
+              </svg>
             </a>
             <a>
-              <svg id='liked' xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 48"><path fill="#F44336" d="M34 9c-4.2 0-7.9 2.1-10 5.4C21.9 11.1 18.2 9 14 9C7.4 9 2 14.4 2 21c0 11.9 22 24 22 24s22-12 22-24c0-6.6-5.4-12-12-12z"/></svg>
+              <svg
+                id="liked"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="img"
+                width="1em"
+                height="1em"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  fill="#F44336"
+                  d="M34 9c-4.2 0-7.9 2.1-10 5.4C21.9 11.1 18.2 9 14 9C7.4 9 2 14.4 2 21c0 11.9 22 24 22 24s22-12 22-24c0-6.6-5.4-12-12-12z"
+                />
+              </svg>
             </a>
 
             <svg
@@ -101,20 +117,17 @@
                 d="M4 5v14.586c0 .89 1.077 1.337 1.707.707L12 14l6.293 6.293c.63.63 1.707.184 1.707-.707V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2Z"
               />
             </svg>
-           
-             {% if post.likes >= 1 %}
+
+            {% if post.likes >= 1 %}
 
             <p class="captionImg">{{post.likes}} likes</p>
-              {% endif %}
-
+            {% endif %}
 
             <p class="captionImg">{{post.image_caption}}</p>
             <p class="captionImg">{{ post.pub_date | timesince }}</p>
           </div>
-      </div>
-        
+        </div>
 
-        
         {%endfor%}
       </div>
       <div class="col-lg-3 homeprof">
@@ -134,19 +147,16 @@
         <div class="followers">
           <ul>
             <p>Suggestions for you</p>
-            {%for userone in users%}
-            {% if userone != current_user%}
+            {%for userone in users%} {% if userone != current_user%}
             <li class="followuser">
               <img src="{{userone.profile.profile_image.url}}" />
-              <a class="username" href="{{userone.profile.profile_}}""">{{userone.username}}</a>
+              <a class="username" href="">{{userone.username}}</a>
+
               <a href="{{user.profile}}">Follow</a>
             </li>
-          {%endif%}
-            {%endfor%}
+            {%endif%} {%endfor%}
           </ul>
         </div>
-        
-
       </div>
     </div>
     {%endblock%}

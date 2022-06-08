@@ -47,7 +47,7 @@ class Profile(models.Model):
         posts = cls.objects.filter(user__icontains=search_term)
         # posts = Profile.objects.get( user__username=UsuarioElegido )
         return posts
-         
+   
     def __str__(self):
         return self.email
     
@@ -55,7 +55,10 @@ class Like(models.Model):
     image = models.ForeignKey(Image, on_delete= models.CASCADE)
     user = models.ForeignKey(User, on_delete= models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
-    
+    def save_like(self):
+        self.save()
+    def delete_like(self):
+        self.delete()
     
     def __str__(self):
        return self.image.image_name + " liked by " + self.user.username
@@ -68,7 +71,7 @@ class Comment(models.Model):
     
     def save_comment(self):
         self.save()
-    def delete_profile(self):
+    def delete_comment(self):
         self.delete()
     def __str__(self):
         return self.comment

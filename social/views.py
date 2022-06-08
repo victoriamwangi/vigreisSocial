@@ -100,7 +100,20 @@ def post_comment(request):
     return render(request, 'home.html', {"postcomm": postcomm, "comments": comments, "new_comment": new_comment, "comment_form": form})      
             
     
-    
+@login_required
+def user_profile(request, username):
+    user_prof = get_object_or_404(User, username=username)
+    if request.user == user_prof:
+        return redirect('profile', username=request.user.username)
+    user_images = user_prof.profile.images.all()
+   
+    params = {
+        'user_prof': user_prof,
+        'user_images': user_images,
+        
+    }
+  
+    return render(request, 'users/user_profile.html', params)
     
     
     

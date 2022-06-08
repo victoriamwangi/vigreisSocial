@@ -11,7 +11,8 @@ urlpatterns=[
     # re_path('^like_post/post_id', views.like_post, name = "like_post", )
     # re_path('^search_profile', views.search_profile, name='search_profile' ),
     re_path(r'^like/(?P<operation>.+)/(?P<pk>\d+)/',views.like, name='like'),
-    re_path(r'^user/(?P<username>\w+)$', views.ShowUserPage)
+    re_path(r'^user/(?P<username>\w+)$', views.ShowUserPage),
+    re_path('user_profile/<username>/', views.user_profile, name='user_profile'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
