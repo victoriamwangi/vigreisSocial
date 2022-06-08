@@ -13,7 +13,7 @@
 
 ## Description
 
-This web site showcases pictures of me and other images of activities or things I like.
+This web site is a clone of instagram and allows user to create an account, post pictures and see posts by other people.
 
 ## Installation
 
