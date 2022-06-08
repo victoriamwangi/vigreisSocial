@@ -22,11 +22,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             {% if user.is_authenticated %}
-            <form class="d-flex searchfrm" role="search" action="">
+            <form class="d-flex searchfrm" role="search" action="{% url 'search'%}">
               <input
                 class="form-control"
                 type="search"
-                action=""
+              
                 placeholder="Search"
                 aria-label="Search"
                 name="profile"

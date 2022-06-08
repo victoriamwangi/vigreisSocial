@@ -39,7 +39,7 @@ def profile(request):
     user = User.objects.get(username= request.user)
     profile = Profile.objects.all()
     posts = Image.objects.all()
-    # posts = Image.objects.filter(profile__id=id)[::-1]
+    
     return render(request, "profile.html", context={"user":user,"profile":profile, "posts": posts})
 
 
@@ -73,10 +73,10 @@ def like(request,operation,pk):
     return redirect('home')
 
 @login_required(login_url='/accounts/login/')
-def ShowUserPage(request, username):
+def search_profile(request):
     if 'profile' in request.GET and request.GET["profile"]:
         search_term = request.GET.get("profile")
-        searched_profile = Profile.objects.get(user__username=search_term )
+        searched_profile = Profile.search_by_profile(search_term)
         message = f"{search_term}"
 
         return render(request, 'search.html',{"message":message,"profiles": searched_profile})
@@ -100,28 +100,4 @@ def post_comment(request):
     return render(request, 'home.html', {"postcomm": postcomm, "comments": comments, "new_comment": new_comment, "comment_form": form})      
             
     
-@login_required
-def user_profile(request, username):
-    user_prof = get_object_or_404(User, username=username)
-    if request.user == user_prof:
-        return redirect('profile', username=request.user.username)
-    user_images = user_prof.profile.images.all()
-   
-    params = {
-        'user_prof': user_prof,
-        'user_images': user_images,
-        
-    }
-  
-    return render(request, 'users/user_profile.html', params)
-    
-    
-    
-    
-# def profile(username):
-#    user = User.query.filter_by(username=username).first() 
-#    images = Images.query.filter_by(author = current_user.id).all()
-#    return render_template("profile/profile.html", user = user, images= images)
 
-
-# Create your views here.

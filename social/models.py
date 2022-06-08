@@ -44,8 +44,8 @@ class Profile(models.Model):
         self.delete()
     @classmethod
     def search_by_profile(cls, search_term):
-        posts = cls.objects.filter(user__icontains=search_term)
-        # posts = Profile.objects.get( user__username=UsuarioElegido )
+        posts = cls.objects.filter(user__username__icontains=search_term)
+        
         return posts
    
     def __str__(self):

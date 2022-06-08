@@ -64,6 +64,20 @@ body {
 
 #post .head {
     height: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#post .head img {
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+}
+
+#myuname {
+    font-weight: bold;
+    margin-right: -2vw !important;
+    color: rgb(124, 7, 95);
 }
 
 #post img {
@@ -243,6 +257,12 @@ body {
 
 #liked {
     display: none;
+}
+
+#postprofuser {
+    width: 30vw;
+    display: flex;
+    flex-direction: row;
 }
 
 @media (min-width: 375px) and (max-width: 912px) {

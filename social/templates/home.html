@@ -17,13 +17,12 @@
           <div class="card-body">
             <div class="head">
               <img
-                class="rounded-circle article-image"
+                class="card-img-top"
+                data-bs-toggle="modal"
                 src="{{post.user.profile.profile_image.url}}"
                 alt=""
-                width="45"
-                height="4"
               />
-              <p>{{post.user.user.username}}</p>
+              <p id="myuname">{{post.social_user}}</p>
             </div>
 
             <img
@@ -139,7 +138,9 @@
           />
           <div class="card-body flex">
             <div class="details">
-              <p class="card-title">{{user.username}}</p>
+              <p class="card-title">
+                <a href="{%url 'profile'%}">{{user.username}}</a>
+              </p>
               <p class="card-title">{{user.first_name}} {{user.second_name}}</p>
             </div>
           </div>
