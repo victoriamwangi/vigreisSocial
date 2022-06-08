@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 
-
+@login_required(login_url='/accounts/login/')
 def home(request):
     
     user = User.objects.get(username= request.user)
@@ -17,8 +17,9 @@ def home(request):
     likes = Like.objects.all()
     users = User.objects.all()
     # delete_post = Image.delete_image(current_user)
+   
     return render(request, 'home.html', {'current_user': user, "posts": posts, "profile": profile , "users":users})
-
+@login_required(login_url='/accounts/login/')
 def new_post(request):
     current_user = request.user
     if request.method == 'POST':
@@ -33,7 +34,7 @@ def new_post(request):
         form = NewPostForm()
         return render(request, 'new_post.html', {'form': form})
 
-@login_required
+@login_required(login_url='/accounts/login/')
 def profile(request):
     user = User.objects.get(username= request.user)
     profile = Profile.objects.all()
@@ -42,7 +43,7 @@ def profile(request):
     return render(request, "profile.html", context={"user":user,"profile":profile, "posts": posts})
 
 
-            
+@login_required(login_url='/accounts/login/')          
 def update_profile(request):
     current_user = request.user
     poster = Profile.objects.filter(user=request.user)
@@ -59,7 +60,7 @@ def update_profile(request):
         form = ProfileForm()
         return render(request, 'update_profile.html', {'current_user': current_user, "posts": posts, "form": form, "poster": poster})
             
-@login_required
+@login_required(login_url='/accounts/login/')
 def like(request,operation,pk):
     post = get_object_or_404(Image,pk=pk)
     
@@ -71,7 +72,7 @@ def like(request,operation,pk):
         post.save()
     return redirect('home')
 
-
+@login_required(login_url='/accounts/login/')
 def ShowUserPage(request, username):
     if 'profile' in request.GET and request.GET["profile"]:
         search_term = request.GET.get("profile")
@@ -83,7 +84,7 @@ def ShowUserPage(request, username):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
-        
+@login_required(login_url='/accounts/login/')        
 def post_comment(request):
     postcomm = get_object_or_404(Image, )
     comments = postcomm.comments.filter(active=True)

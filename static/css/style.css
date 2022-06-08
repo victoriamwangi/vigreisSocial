@@ -51,6 +51,10 @@ body {
     border-radius: 5px !important;
 }
 
+.welcome {
+    background-image: url("/media/welcome.jpg");
+}
+
 #post {
     border-radius: 10px;
     margin-top: 1vw;
