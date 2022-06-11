@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jun  7 17:21:09 2022
+# Make data base, printed on Thu Jun  9 10:03:04 2022
 
 # Variables
 
@@ -51,7 +49,7 @@ SNAP_DATA = /var/snap/code/97
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:44345
+JOURNAL_STREAM = 8:42827
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -71,13 +69,13 @@ MAKELEVEL := 0
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=f4c65be394745ae0f6046cf1629eee8a
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=4434afe586664ce81a52210862a199ca
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
 _ = /snap/code/97/usr/share/code/code
 # environment
-MANAGERPID = 1348
+MANAGERPID = 1333
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -89,11 +87,11 @@ GSETTINGS_SCHEMA_DIR = /snap/code/97/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/moringa/.local/bin:/home/moringa/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/moringa/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/VickyDq:@/tmp/.ICE-unix/1565,unix/VickyDq:/tmp/.ICE-unix/1565
+SESSION_MANAGER = local/VickyDq:@/tmp/.ICE-unix/1549,unix/VickyDq:/tmp/.ICE-unix/1549
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -111,7 +109,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = df8b47ce1fe64a7d8db029a9e096198f
+INVOCATION_ID = f69102d7b0584dc18322bc0928f55dbc
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/97/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -123,7 +121,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 44233
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5020
 # automatic
 %F = $(notdir $%)
 # environment
@@ -137,7 +135,7 @@ PWD = /home/moringa/Documents/Dev/Django/IPS/vigreisSocial
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1527
+SSH_AGENT_PID = 1510
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -191,7 +189,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-9ba5c812-9ab9-46fc-b37a-8da613d488d2.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-dc95ce6d-3df0-4729-bf89-fe5feaa67bd1.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -233,6 +231,8 @@ GDK_BACKEND = x11
 # environment
 LC_PAPER = om_KE.UTF-8
 # environment
+NO_AT_BRIDGE = 1
+# environment
 QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
@@ -271,30 +271,32 @@ LC_ADDRESS = om_KE.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 44279
+VSCODE_PID = 2988
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=f4c65be394745ae0f6046cf1629eee8a
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=4434afe586664ce81a52210862a199ca
 # environment
 NVM_RC_VERSION = 
 # variable set hash-table stats:
-# Load=132/1024=13%, Rehash=0, Collisions=22/157=14%
+# Load=133/1024=13%, Rehash=0, Collisions=22/158=14%
 
 # Pattern-specific Variable Values
- 
 
 # No pattern-specific variable values.
 
 # Directories
 
-# . (device 2053, inode 9576441): 15 files, no impossibilities.
+# . (device 2053, inode 9576441): 19 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 # No implicit rules.
 
 # Files
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 
 # Not a target:
 all:
@@ -338,12 +340,12 @@ migrations:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 22 / storage = 193 B / avg = 8 B
-# current buf: size = 8162 B / used = 193 B / count = 22 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 26 / storage = 236 B / avg = 9 B
+# current buf: size = 8162 B / used = 236 B / count = 26 / avg = 9 B
 
-# strcache performance: lookups = 28 / hit rate = 21%
+# strcache performance: lookups = 32 / hit rate = 18%
 # hash-table stats:
-# Load=22/8192=0%, Rehash=0, Collisions=1/28=4%
-# Finished Make data base on Tue Jun  7 17:21:09 2022
+# Load=26/8192=0%, Rehash=0, Collisions=1/32=3%
+# Finished Make data base on Thu Jun  9 10:03:04 2022
 
  
